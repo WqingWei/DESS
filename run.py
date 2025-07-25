@@ -2,9 +2,6 @@ import argparse
 import os
 import torch
 from exp.exp_anomaly_detection import Exp_Anomaly_Detection
-from exp.exp_noCI_anomaly_detection import Exp_Anomaly_Detection_noCI
-from exp.exp_compare import Exp_Compare
-from exp.cross_dataset_evaluation import Exp_CrossDatasetEvaluation
 import random
 import numpy as np
 from ipdb import set_trace
@@ -121,93 +118,17 @@ if args.use_gpu:
 print('Args in experiment:')
 print(args)
 
-# dataset_configs = {
-#             'SMD': {'enc_in': 38, 'c_out': 38, 'in_channel': 38, 'out_channel': 38},
-#             'SMAP': {'enc_in': 25, 'c_out': 25, 'in_channel': 25, 'out_channel': 25},
-#             'MSL': {'enc_in': 55, 'c_out': 55, 'in_channel': 55, 'out_channel': 55},
-#             'PSM': {'enc_in': 25, 'c_out': 25, 'in_channel': 25, 'out_channel': 25},
-#             'SWAT': {'enc_in': 51, 'c_out': 51, 'in_channel': 51, 'out_channel': 51}
-#         }
-# dataset_config = dataset_configs[args.data]
-# args.enc_in = dataset_config['enc_in']
-# args.c_out = dataset_config['c_out']
-# args.in_channel = dataset_config['in_channel']
-# args.out_channel = dataset_config['out_channel']
 
-# dataset_types = args.dataset_types.split(',')
-
-# Exp = Exp_Anomaly_Detection
-Exp = Exp_Anomaly_Detection_noCI
-# Exp = Exp_Compare
-# Exp = Exp_CrossDatasetEvaluation
-# set_trace()
-
+Exp = Exp_Anomaly_Detection
 
 
 exp = Exp(args)
-    # print(f'>>>>>>> Start training on {dataset_type} dataset >>>>>>>>>>>>>>>>>>>>')
-# dataset_types=['SMD','UCR']
-dataset_types=['SMD']
-# dataset_types=['MSL','PSM','SMAP']
-# dataset_types=['MSL','SMAP']
-# dataset_types=['SMAP','PSM','MSL','SWAT','SMD','UCR']
-# exp.train_on_multiple_datasets(dataset_types)
-exp.train_on_dataset_segments(dataset_types, num_segments=3)
-# exp.train_with_balanced_anomalies(dataset_types, num_segments=2)
-# exp.train_on_multiple_datasets_retrain(dataset_types)
-# exp.run_finetune_experiment(dataset_types=dataset_types,base_checkpoint="./checkpoints/model_MSL/checkpoint-finetune.pth",num_samples=500,finetune_epochs=1,finetune_lr=1e-4)
-# exp.cross_dataset_evaluation(train_dataset='SMD',dataset_types=dataset_types)
-# exp.train_on_multiple_datasets_replay(dataset_types=dataset_types,replay_size=500)
 
+dataset_types=['SMAP','PSM','MSL','SWAT','SMD','UCR']
+exp.train_on_multiple_datasets(dataset_types)
 
-
-
-# print("开始比较持续学习与合并数据集训练方法")
-# exp.compare_continual_vs_combined()
 torch.cuda.empty_cache()
 print("Complete!")
 
-#####reconstruction
-'''
-
-# 定义保存路径
-save_path = './reconstruction_results'
-if not os.path.exists(save_path):
-    os.makedirs(save_path)
-
-
-def add_module_prefix(state_dict):
-    new_state_dict = {}
-    for k, v in state_dict.items():
-        new_state_dict["module." + k] = v
-    return new_state_dict
-
-# save_path = './reconstruction_results'  # 保存路径
-  # 数据集类型
-for dataset_type in dataset_types:
-    print(f'>>>>>>>>>>>>>>>> Start testing on {dataset_type} dataset >>>>>>>>>>>>>>>>>>>>')
-    # 构建模型
-    dataset_configs = {
-        'SMD': {'enc_in': 38, 'c_out': 38},
-        'SMAP': {'enc_in': 25, 'c_out': 25},
-        'MSL': {'enc_in': 55, 'c_out': 55},
-        'PSM': {'enc_in': 25, 'c_out': 25},
-        'SWAT': {'enc_in': 51, 'c_out': 51}
-    }
-    config = dataset_configs[dataset_type]
-    exp.model = exp._build_model(config)
-    
-    # 加载模型权重
-    model_path = os.path.join(args.checkpoints, f"model_{dataset_type}", 'checkpoint-.pth')
-    exp.load_model_weights(model_path)
-    
-    
-    
-    # 获取测试数据加载器
-    test_data, test_loader = exp._get_data(flag='test', dataset_type=dataset_type)
-
-    # 保存重构序列
-    exp.save_reconstructed_sequences(test_loader, save_path, dataset_type)
-'''
 
 

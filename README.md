@@ -1,6 +1,12 @@
 # Evolving Proxy Kills Drift: Data-Efficient Streaming Time Series Anomaly Detection
 
 
+### Train and Evaluate
+You can reproduce the experiment results by running scripts in `./scripts/`:
+```
+bash ./scripts/run.sh
+```
+
 ### Datasets
 
 _**SMAP**_, _**PSM**_, _**MSL**_, _**SWaT**_, _**SMD**_, and _**UCR**_ can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1KOQvV2nR6Y9tIkB4XELHA1CaV1F8LrZ6).
@@ -33,15 +39,10 @@ lines 7–11 show the data-efficient adaptation.
 <img width="500" src="fig/algorithm.png"/>
 </p>
 
-### Setups
 
-#### 1. Requirements
+
+###  Environment
  Install Pytorch3.11 and the required packages.
 ```
 pip install -r requirements.txt
-```
-#### 2. Train and Evaluate
-You can reproduce the experiment results by running scripts in `./scripts/`:
-```
-bash ./scripts/run.sh
 ```

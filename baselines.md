@@ -11,7 +11,7 @@
 - **Local Outlier Factor (LOF)**  
   A density-based method that measures local deviation of a given data point with respect to its neighbors. Lower local density implies higher likelihood of being an outlier.
 
-- **Series2Graph (S2G)**  
+- **Series2Graph**  
   Transforms time series into graph representations to capture latent correlations. Anomalies are detected based on deviations in graph connectivity patterns, enabling multi-scale dependency analysis.
 
 - **SAND**  
@@ -38,7 +38,7 @@
 - **Dlinear**  
   A decomposition-based linear forecasting model that separately projects trend and seasonal components using linear layers, achieving strong performance with minimal model complexity and computation.
 
-- **AnomalyTransformer (AnoTrans)**  
+- **AnomalyTransformer**  
   A transformer-based model that introduces a prior-association mechanism to measure association discrepancy between normal and anomalous patterns, enabling both accurate detection and interpretable identification of anomalies in time series.
 
 - **DCDetector**  

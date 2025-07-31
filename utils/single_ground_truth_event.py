@@ -3,7 +3,7 @@ import math
 from .affiliation_zone import get_all_E_gt_func, affiliation_partition
 from .integral_interval import integral_interval_distance, sum_interval_lengths, \
     integral_interval_probaCDF_precision, interval_length, integral_interval_probaCDF_recall
-
+ 
 
 def affiliation_precision_distance(Is=None, J=(2, 5.5)):
     if Is is None:

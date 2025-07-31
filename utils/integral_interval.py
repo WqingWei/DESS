@@ -7,7 +7,7 @@ def interval_length(J=(1, 2)):
     if J is None:
         return 0
     return J[1] - J[0]
-
+ 
 
 def sum_interval_lengths(Is=None):
     if Is is None:

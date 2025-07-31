@@ -5,7 +5,7 @@ from exp.exp_anomaly_detection import Exp_Anomaly_Detection
 import random
 import numpy as np
 from ipdb import set_trace
-
+ 
 fix_seed = 2021
 random.seed(fix_seed)
 torch.manual_seed(fix_seed)

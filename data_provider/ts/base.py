@@ -6,7 +6,7 @@
 #
 import pandas as pd
 from typing import Tuple
-
+ 
 _intro_docstr = "Base dataset class for storing time series as ``pd.DataFrame`` s."
 
 _main_fns_docstr = """

@@ -5,7 +5,7 @@ from sklearn import metrics
 from .vus_metrics import metricor, generate_curve
 from .utils import get_list_anomaly
 from sklearn.metrics import precision_recall_curve
-
+ 
 __all__ = ["auc_roc", "auc_pr", "R_AUC_ROC", "R_AUC_PR", "VUS_ROC", "VUS_PR"]
 # __all__ = ["best_ratio", "best_accuracy", "best_f_score", "best_precision", "best_recall", "auc_roc", "auc_pr", "R_AUC_ROC", "R_AUC_PR", "VUS_ROC", "VUS_PR"]
 

@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from model.embed import *
 from layers.Transformer_EncDec import Encoder, EncoderLayer
 from model.SelfAttention_Family import FullAttention, AttentionLayer, PatchFusionWithSeasonTrend
-
+ 
 class Transpose(nn.Module):
     def __init__(self, *dims, contiguous=False): 
         super().__init__()

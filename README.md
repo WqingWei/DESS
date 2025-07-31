@@ -36,7 +36,7 @@ The whole process of the evolving proxy generation is shown
 in Algorithm 2, where lines 1–6 state the proxy initialization and
 lines 7–11 show the data-efficient adaptation.
 <p align="center">
-<img width="500" src="fig/algorithm.png"/>
+<img width="500" src="fig/Algorithm.png"/>
 </p>
 
 

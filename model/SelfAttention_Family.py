@@ -10,7 +10,7 @@ from math import sqrt
 # from utils.masking import TriangularCausalMask, ProbMask
 import os
 
-
+ 
 class FullAttention(nn.Module):
     def __init__(self, mask_flag=True, factor=5, scale=None, attention_dropout=0.1, output_attention=False):
         super(FullAttention, self).__init__()

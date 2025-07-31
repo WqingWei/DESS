@@ -2,7 +2,7 @@ from .affiliation_zone import get_all_E_gt_func, affiliation_partition
 from .generics import infer_Trange, has_point_anomalies, _len_wo_nan, _sum_wo_nan, read_all_as_events
 from .single_ground_truth_event import affiliation_precision_distance, affiliation_recall_distance, \
     affiliation_precision_proba, affiliation_recall_proba
-
+ 
 
 def test_events(events):
     if type(events) is not list:

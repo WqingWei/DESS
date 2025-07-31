@@ -1,6 +1,6 @@
 from .integral_interval import interval_intersection
 
-
+ 
 def t_start(j, Js=None, Trange=(1, 10)):
     if Js is None:
         Js = [(1, 2), (3, 4), (5, 6)]

@@ -5,7 +5,7 @@ import os
 from itertools import groupby
 from operator import itemgetter
 
-
+ 
 def convert_vector_to_events(vector=None):
     if vector is None:
         vector = [0, 1, 1, 0, 0, 1, 0]

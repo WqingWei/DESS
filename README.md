@@ -11,7 +11,6 @@ bash ./scripts/run.sh
 
 _**SMAP**_, _**PSM**_, _**MSL**_, _**SWaT**_, _**SMD**_, and _**UCR**_ can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1KOQvV2nR6Y9tIkB4XELHA1CaV1F8LrZ6).
 
-
 ### Dataset Details
 
 - **SMAP**  

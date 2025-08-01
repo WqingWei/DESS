@@ -48,4 +48,4 @@ pip install -r requirements.txt
 ```
 
 ## Baselines
-For more details, please see the [baselines](./baselines.md).
+We also provide the [baseline details](./baselines.md).

@@ -47,5 +47,5 @@ lines 7–11 show the data-efficient adaptation.
 pip install -r requirements.txt
 ```
 
-## Baselines
+## Baseline details
 We also provide the [baseline details](./baselines.md).
